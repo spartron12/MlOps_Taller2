@@ -167,7 +167,7 @@ docker compose up
 ![Limpieza y transformación de datos](./imagenes/LimpiezaPYfuncionando.png)
 *Figura 3: Limpieza y transformación de los datos*
 
-2. **Entrenamiento y almacenamiento del modelo clasifiación**:
+2. **Entrenamiento y almacenamiento del modelo clasificación**:
 
 ![Entrenamiento](./imagenes/Modelosecreaexitosamente.png)
 *Figura 4: Entrenamiento del modelo*

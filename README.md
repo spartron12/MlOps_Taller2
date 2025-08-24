@@ -146,7 +146,6 @@ Para entrenar los modelos, sigue estos pasos:
 
 
 2. **Ejecución del script de limpieza de datos**:
-3. 
  ```python
  import palmerpenguins as pp
 import pandas as pd

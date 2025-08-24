@@ -44,6 +44,20 @@ proyecto-pinguinos/
   - **pyproject.toml**: Dependencias y configuración del proyecto.
   - **README.md**: Documentación de la API.
 
+- **docker-compose.yml**:  
+  Archivo de orquestación que define y gestiona los contenedores del proyecto.  
+  - Permite levantar de manera simultánea los servicios de **Jupyter** y de la **API**, conectándolos en la misma red interna.  
+  - Facilita el montaje de volúmenes para compartir los **modelos entrenados** entre Jupyter y la API.  
+  - Incluye la configuración de dependencias, variables de entorno y puertos expuestos para el acceso desde el host.
+
+- **models/**:  
+  Carpeta común ubicada en la raíz del proyecto que almacena los **modelos entrenados** en formato **pickle (.pkl)**.  
+  - Es compartida como volumen tanto por el contenedor de **Jupyter** como por el de la **API**, garantizando que los modelos entrenados puedan ser usados inmediatamente por la API sin necesidad de copiarlos manualmente.  
+  - Generalmente contiene archivos como:  
+    - `logistic_regression.pkl`  
+    - `decision_tree.pkl`  
+    - `knn.pkl`  
+
 ---
 
 ## 1. Entrenamiento de Modelos (Jupyter)
@@ -54,21 +68,18 @@ En esta sección se encuentran los scripts que realizan la **limpieza de datos**
 - **limpieza.py**: Realiza el preprocesamiento de los datos, como la eliminación de valores nulos y la codificación de variables categóricas.
 
 ### Creación de Modelos
-- **crea_modelos.py**: Entrena modelos de clasificación (Regresión logística, Árbol de decisión y KNN) utilizando el conjunto de datos de **palmerpenguins**. Los modelos entrenados se guardan en la carpeta **models/** en formato **pickle**.
+- **crea_modelos.py**: Entrena modelos de clasificación (Regresión logística, Árbol de decisión y KNN) utilizando el conjunto de datos de **palmerpenguins**.  
+  Los modelos entrenados se guardan en la carpeta **models/** en formato **pickle**.
 
 ---
 
-## 2. API REST con FastAPI
+## 2. Despliegue de Modelos (API)
 
-Una vez que los modelos han sido entrenados y guardados, se consume la API para realizar predicciones sobre nuevos datos.
+La API implementada con **FastAPI** permite cargar los modelos previamente entrenados y exponer endpoints para realizar predicciones.
 
-### Funcionalidades de la API
+- Los modelos se leen directamente desde la carpeta **models/**.
+- Se pueden consumir los endpoints para obtener predicciones de especies de pingüinos a partir de características como longitud y profundidad del pico, longitud de la aleta y masa corporal.
 
-La API permite:
-- **Recepción de datos**: Mediante un esquema **Pydantic** para validar las entradas.
-- **Selección dinámica de modelos**: Permite elegir entre diferentes modelos entrenados.
-- **Inferencia escalada**: Los datos de entrada son automáticamente procesados.
-- **Respuesta estructurada**: Devuelve la especie predicha junto con las probabilidades por clase.
 
 ---
 

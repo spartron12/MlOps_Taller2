@@ -89,9 +89,44 @@ Tanto la parte de la **API** como la de **Jupyter** están creadas en un contene
 
 ```
 
+### Dockerfile para Jupyter
+El archivo **Dockerfile** en la carpeta **Jupyter/** define el entorno para la creación de los modelos
+```dockerfile
+# Imagen base ligera de Python
+FROM python:3.12-slim
+ 
+# Crear directorios
+RUN mkdir -p /bases_modelo /encoder
+ 
+# Copiar dependencias
+COPY pyproject.toml uv.lock ./
+ 
+# Instalar pip y uv
+RUN pip install --upgrade pip \
+&& pip install uv
+ 
+# Instalar dependencias directamente en el sistema
+RUN uv pip install -r pyproject.toml --system
+ 
+# Directorio de trabajo
+WORKDIR /app
+ 
+# Copiar scripts
+COPY crea_modelos.py .
+COPY limpieza.py .
+ 
+# Exponer puerto de Jupyter
+EXPOSE 8888
+ 
+# Arrancar Jupyter con Python del sistema
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--NotebookApp.token="]
+```
+
+
+
 
 ### Dockerfile para API
-El archivo **Dockerfile** en la carpeta **API/** define la imagen para que corra la aplicación que consume los modelos.
+El archivo **Dockerfile** en la carpeta **api/** define la imagen para que corra la aplicación que consume los modelos.
 ```dockerfile
 # Imagen base
 FROM python:3.12-slim

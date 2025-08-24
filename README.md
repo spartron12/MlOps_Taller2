@@ -162,10 +162,15 @@ docker compose up
 *Figura 2: Verificación de del entorno de jupyter lab*
 
 
-2. **Ejecución del código par la limpieza y transformación de dataset**:
+2. **Ejecución del código para la limpieza y transformación de dataset**:
 
 ![Limpieza y transformación de datos](./imagenes/LimpiezaPYfuncionando.png)
-*Figura 3: Limpieza y transformaicón de los datos*
+*Figura 3: Limpieza y transformación de los datos*
+
+2. **Entrenamiento y almacenamiento del modelo clasifiación**:
+
+![Entrenamiento](./imagenes/Modelosecreaexitosamente.png)
+*Figura 4: Entrenamiento del modelo*
 
 
 

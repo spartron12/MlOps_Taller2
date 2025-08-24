@@ -188,7 +188,8 @@ print('Base exportada con éxito')
    ```
 
 3. **Entrenar modelos**:
-   ```python
+   
+ ```python
  import pandas as pd
 import joblib
 import numpy as np
@@ -217,6 +218,7 @@ joblib.dump(model, '/models/KNeighborsClassifier.pkl')
 print('Modelo Exportado Exitosamente')
 
    ```
+
 4. **Se guardan los modelos dentro del container para que la API los pueda consumir**:
 
 ### Ejecución de la API

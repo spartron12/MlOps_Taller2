@@ -181,7 +181,7 @@ df_encoded['species'] = df_encoded['species'].apply(lambda x:
 None)
 df_encoded.to_csv('/bases_modelo/base_penguin.csv', index = False)
 print('Base exportada con éxito')
-   ```
+ ```
 
 3. **Entrenar modelos**:
    ```python

@@ -159,7 +159,17 @@ docker compose up
 
 
 ![Entorno de Jupyter](./imagenes/JupyterLab.png)
-*Figura 1: Verificación de del entorno de jupyter lab*
+*Figura 2: Verificación de del entorno de jupyter lab*
+
+
+2. **Ejecución del código par la limpieza y transformación de dataset**:
+
+![Limpieza y transformación de datos(./imagenes/JLimpieza PY funcionando.png)
+*Figura 3: Limpieza y transformaicón de los datos*
+
+
+
+
 
 
 

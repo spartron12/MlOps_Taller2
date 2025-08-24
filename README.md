@@ -128,6 +128,14 @@ docker compose down -v
 docker compose build
 docker compose up
 ```
+API → http://localhost:9000/docs
+
+Jupyter Notebook → http://localhost:8000
+
+
+
+
+
 2. **Verificación de los modelos**:
 
 ![modelos_iniciales](./imagenes/modelos_iniciales.png)
@@ -239,6 +247,23 @@ print('Modelo Exportado Exitosamente')
    ```
 
 3. **Se guardan los modelos dentro del container para que la API los pueda consumir**:
+
+
+###  Ejecución de la API y Jupyter
+
+Para levantar los servicios con Docker, sigue estos pasos:
+
+## 1. Construir y ejecutar con Docker Compose
+```bash
+docker-compose up --build
+
+
+API → http://localhost:9000/docs
+
+Jupyter Notebook → http://localhost:8000
+
+
+
 
 ### Ejecución de la API
 Para ejecutar la API con Docker, sigue estos pasos:

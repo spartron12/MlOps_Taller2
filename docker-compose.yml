@@ -1,0 +1,20 @@
+version: '3.9'
+services:
+  jupyter:
+    build: ./Jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ${PWD}/models:/models
+      - ${PWD}/jupyter/notebooks:/app/notebooks
+    container_name: jupyter-hatch
+
+  api:
+    build: ./api
+    ports:
+      - "9999:9999"
+    volumes:
+      - ${PWD}/models:/models
+    depends_on:
+      - jupyter
+    container_name: mi_api

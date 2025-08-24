@@ -151,7 +151,7 @@ docker compose up
 
 
 ![modelos_iniciales](./imagenes/modelos_iniciales.png)
-*Figura 3: Resultado de la predicción mostrando la respuesta completa de la API*
+*Figura 1: Verificación de los modelos iniciales antes del entrenamiento*
 
 
 

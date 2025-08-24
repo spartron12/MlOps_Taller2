@@ -11,7 +11,6 @@ La estructura del proyecto está organizada en dos partes principales: **Jupyter
 ```
 proyecto-pinguinos/
 ├── api/
-│   ├── .venv/
 │   ├── models/
 │   ├── Dockerfile
 │   ├── main.py
@@ -19,7 +18,6 @@ proyecto-pinguinos/
 │   ├── README.md
 │   └── uv.lock
 ├── Jupyter/
-│   ├── .venv/
 │   ├── notebooks/
 │   ├── crea_modelos.py
 │   ├── limpieza.py

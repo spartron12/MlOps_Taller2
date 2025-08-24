@@ -184,13 +184,10 @@ Figura 6: Predicción del modelo
 
 
 
-### Entrenamiento de Modelos (Jupyter)
+### Programas usados para la limpieza de los datos y el entrenamiento del modeo en Jupyter
 Para entrenar los modelos, sigue estos pasos:
 
-1. **Activación del entorno de Jupyter**:
-
-
-2. **Ejecución del script de limpieza de datos**:
+1. **Script de limpieza  y transformación de datos**:
  ```python
  import palmerpenguins as pp
 import pandas as pd
@@ -229,7 +226,7 @@ print('Base exportada con éxito')
 
    ```
 
-3. **Entrenar modelos**:
+2. **Script de entrenamiento de los modelos de clasificación**:
    
  ```python
  import pandas as pd
@@ -261,7 +258,7 @@ print('Modelo Exportado Exitosamente')
 
    ```
 
-4. **Se guardan los modelos dentro del container para que la API los pueda consumir**:
+3. **Se guardan los modelos dentro del container para que la API los pueda consumir**:
 
 ### Ejecución de la API
 Para ejecutar la API con Docker, sigue estos pasos:

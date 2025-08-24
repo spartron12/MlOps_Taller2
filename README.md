@@ -150,7 +150,7 @@ docker compose up
 2. **Verificación de los modelos**:
 
 
-![modelos_iniciales](./imagenes/modelos_iniciales.PNG)
+![modelos_iniciales](./imagenes/modelos_iniciales.png)
 *Figura 3: Resultado de la predicción mostrando la respuesta completa de la API*
 
 

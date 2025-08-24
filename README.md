@@ -206,7 +206,6 @@ Figura 6: Predicción del modelo
 
 
 ### Programas usados para la limpieza de los datos y el entrenamiento del modeo en Jupyter
-Para entrenar los modelos, sigue estos pasos:
 
 1. **Script de limpieza  y transformación de datos**:
  ```python

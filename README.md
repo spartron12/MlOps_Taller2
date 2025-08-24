@@ -175,10 +175,10 @@ Figura 4: Entrenamiento del modelo*
 Figura 5: Modelos disponibles
 
 
-6 **Predicción usando el modelo generado en JupyterLab**:
+6. **Predicción usando el modelo generado en JupyterLab**:
 
 ![Modelos](./imagenes/Modelo_seleccionado_predice_correctamente.png)
-*Figura 6: Predicción del modelo
+Figura 6: Predicción del modelo
 
 
 

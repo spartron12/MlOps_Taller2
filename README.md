@@ -172,7 +172,10 @@ docker compose up
 ![Entrenamiento](./imagenes/Modelosecreaexitosamente.png)
 *Figura 4: Entrenamiento del modelo*
 
+2. **Verificación de los modelos disponibles en FASTAPI**:
 
+![Modelos](./imagenes/Modelo_disponible_en_API.png)
+*Figura 5: Modelos disponibles
 
 
 

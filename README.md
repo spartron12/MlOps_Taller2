@@ -128,9 +128,9 @@ docker compose down -v
 docker compose build
 docker compose up
 ```
-API → http://localhost:9000/docs
+API → http://localhost:9999/docs
 
-Jupyter Notebook → http://localhost:8000
+Jupyter Notebook → http://localhost:8888
 
 
 
@@ -249,34 +249,6 @@ print('Modelo Exportado Exitosamente')
 3. **Se guardan los modelos dentro del container para que la API los pueda consumir**:
 
 
-###  Ejecución de la API y Jupyter
-
-Para levantar los servicios con Docker, sigue estos pasos:
-
-## 1. Construir y ejecutar con Docker Compose
-```bash
-docker-compose up --build
-
-
-API → http://localhost:9000/docs
-
-Jupyter Notebook → http://localhost:8000
-
-
-
-
-### Ejecución de la API
-Para ejecutar la API con Docker, sigue estos pasos:
-
-1. **Construir y ejecutar con Docker Compose**:
-   ```bash
-   docker-compose up --build
-   ```
-
-La API estará disponible en http://localhost:9999/docs.
-
----
-
 ## 5. Endpoints Disponibles
 
 - **GET** `/`: Página de bienvenida
@@ -285,12 +257,6 @@ La API estará disponible en http://localhost:9999/docs.
 - **GET** `/redoc`: Documentación alternativa (ReDoc)
 - **GET** `/health`: Endpoint de health check
 
-### Ejemplo del funcionamiento 
-
--La API valida el contendor para ver que modelos ya han sido creados y pueden ser utilizados
-
-
----
 
 ## 6. Tecnologías Utilizadas
 

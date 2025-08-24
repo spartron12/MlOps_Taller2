@@ -122,17 +122,15 @@ RUN mkdir /models
 # Copiamos pyproject.toml y el lockfile de uv
 COPY pyproject.toml uv.lock ./
 
-# Instalamos uv (en vez de hatch)
+# Instalamos uv
 RUN pip install --upgrade pip \
     && pip install uv
 
-# Instalamos dependencias en el sistema (sin virtualenv)
 RUN uv sync --frozen
 
-# Copiamos el resto del código
 COPY . .
 
-# Exponemos el puerto de Uvicorn (ajusta según tu app)
+# Exponemos el puerto de Uvicorn 
 EXPOSE 9999
 
 # Comando para levantar tu API con Uvicorn usando uv

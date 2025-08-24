@@ -32,7 +32,7 @@ proyecto-pinguinos/
 ### Descripción de Componentes
 
 - **Jupyter**:
-  - **crea_modelos.py**: Script para la creación y entrenamiento de modelos.
+  - **crea_modelos.py**: Script para la creación y entrenamiento de modelos, se puede desplegar en un notebook de Jupyter si es necesario.
   - **limpieza.py**: Script para la limpieza y preparación de datos.
   - **notebooks/**: Carpeta con notebooks para exploración de datos y análisis.
 

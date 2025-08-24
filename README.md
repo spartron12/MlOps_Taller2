@@ -159,7 +159,7 @@ docker compose up
 
 
 ![Entorno de Jupyter](./imagenes/JupyterLab.png)
-*Figura 1: Verificación de del entorno de ju´pyter lab*
+*Figura 1: Verificación de del entorno de jupyter lab*
 
 
 

@@ -146,8 +146,9 @@ Para entrenar los modelos, sigue estos pasos:
 
 
 2. **Ejecución del script de limpieza de datos**:
-   ```python
-  import palmerpenguins as pp
+3. 
+ ```python
+ import palmerpenguins as pp
 import pandas as pd
 import joblib
 import numpy as np
@@ -181,7 +182,8 @@ df_encoded['species'] = df_encoded['species'].apply(lambda x:
 None)
 df_encoded.to_csv('/bases_modelo/base_penguin.csv', index = False)
 print('Base exportada con éxito')
- ```
+
+   ```
 
 3. **Entrenar modelos**:
    ```python

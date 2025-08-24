@@ -73,24 +73,40 @@ La API permite:
 
 ## 3. Contenerización con Docker
 
-Tanto la parte de la **API** como la de **Jupyter** están contenerizadas para facilitar su despliegue.
+Tanto la parte de la **API** como la de **Jupyter** están creadas en un contenedor con docker desplegado mediante compose  para mayor facilidad.
 
-### Dockerfile para la API
+### Dockerfile para JupyterLab
 El archivo **Dockerfile** en la carpeta **api/** define cómo se construye la imagen de Docker para la API FastAPI.
 
 ```dockerfile
-FROM python:3.11-slim
+# Imagen base ligera de Python
+FROM python:3.12-slim
 
+# Crear directorios
+RUN mkdir -p /bases_modelo /encoder
+
+# Copiar dependencias
+COPY pyproject.toml uv.lock ./
+
+# Instalar pip y uv
+RUN pip install --upgrade pip \
+    && pip install uv
+
+# Instalar dependencias directamente en el sistema
+RUN uv pip install -r pyproject.toml --system
+
+# Directorio de trabajo
 WORKDIR /app
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Copiar scripts
+COPY crea_modelos.py .
+COPY limpieza.py .
 
-COPY app/ ./app/
+# Exponer puerto de Jupyter
+EXPOSE 8888
 
-EXPOSE 8000
-
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Arrancar Jupyter con Python del sistema
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--NotebookApp.token="]
 ```
 
 ### Dockerfile para Jupyter

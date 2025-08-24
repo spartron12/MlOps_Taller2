@@ -144,7 +144,6 @@ CMD ["uv", "run", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "9999"]
 
 1. **Levantamiento de la aplicación**:
 ```bash
-# Imagen base
 docker compose down -v
 docker compose build
 docker compose up

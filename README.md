@@ -236,24 +236,10 @@ La API estará disponible en http://localhost:9999/docs.
 - **GET** `/redoc`: Documentación alternativa (ReDoc)
 - **GET** `/health`: Endpoint de health check
 
-### Ejemplo de Uso con cURL
+### Ejemplo del funcionamiento 
 
-```bash
-curl -X POST "http://localhost:8989/predict?model_name=logistic_regression" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "bill_length_mm": 39.1,
-    "bill_depth_mm": 18.7,
-    "flipper_length_mm": 181,
-    "body_mass_g": 3750,
-    "year": 2007,
-    "sex_Female": 0,
-    "sex_Male": 1,
-    "island_Biscoe": 0,
-    "island_Dream": 0,
-    "island_Torgersen": 1
-  }'
-```
+-La API valida el contendor para ver que modelos ya han sido creados y pueden ser utilizados
+
 
 ---
 

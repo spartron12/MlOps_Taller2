@@ -164,7 +164,7 @@ docker compose up
 
 2. **Ejecución del código par la limpieza y transformación de dataset**:
 
-![Limpieza y transformación de datos(./imagenes/LimpiezaPY funcionandopng)
+![Limpieza y transformación de datos(./imagenes/LimpiezaPYfuncionando.png)
 *Figura 3: Limpieza y transformaicón de los datos*
 
 

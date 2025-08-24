@@ -155,7 +155,7 @@ CMD ["uv", "run", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "9999"]
 ```
 ---
 
-## 4. Ejecución del Proyecto
+## Ejecución del Proyecto
 
 1. **Levantamiento de la aplicación**:
 ```bash
@@ -187,7 +187,7 @@ Figura 2: Verificación de del entorno de jupyter lab*
 ![Limpieza y transformación de datos](./imagenes/LimpiezaPYfuncionando.png)
 Figura 3: Limpieza y transformación de los datos*
 
-4. **Entrenamiento y almacenamiento del modelo clasificación**:
+4. **Entrenamiento y almacenamiento del modelo de clasificación**:
 
 ![Entrenamiento](./imagenes/Modelosecreaexitosamente.png)
 Figura 4: Entrenamiento del modelo*
@@ -202,8 +202,6 @@ Figura 5: Modelos disponibles
 
 ![Modelos](./imagenes/Modelo_seleccionado_predice_correctamente.png)
 Figura 6: Predicción del modelo
-
-
 
 
 
@@ -284,16 +282,8 @@ print('Modelo Exportado Exitosamente')
 3. **Se guardan los modelos dentro del container para que la API los pueda consumir**:
 
 
-## 5. Endpoints Disponibles
 
-- **GET** `/`: Página de bienvenida
-- **POST** `/predict`: Endpoint de predicción
-- **GET** `/docs`: Documentación interactiva (Swagger UI)
-- **GET** `/redoc`: Documentación alternativa (ReDoc)
-- **GET** `/health`: Endpoint de health check
-
-
-## 6. Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 - **Machine Learning**: scikit-learn, pandas, numpy
 - **API Framework**: FastAPI, Pydantic, Uvicorn

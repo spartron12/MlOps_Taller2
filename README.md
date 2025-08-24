@@ -150,32 +150,29 @@ docker compose up
 ```
 2. **Verificación de los modelos**:
 
-
 ![modelos_iniciales](./imagenes/modelos_iniciales.png)
 *Figura 1: Verificación de los modelos iniciales antes del entrenamiento*
 
-
 3. **Entorno de gestión de datos y entrenamiento de modelos**:
 
-
 ![Entorno de Jupyter](./imagenes/JupyterLab.png)
-*Figura 2: Verificación de del entorno de jupyter lab*
+Figura 2: Verificación de del entorno de jupyter lab*
 
 
 2. **Ejecución del código para la limpieza y transformación de dataset**:
 
 ![Limpieza y transformación de datos](./imagenes/LimpiezaPYfuncionando.png)
-*Figura 3: Limpieza y transformación de los datos*
+Figura 3: Limpieza y transformación de los datos*
 
 4. **Entrenamiento y almacenamiento del modelo clasificación**:
 
 ![Entrenamiento](./imagenes/Modelosecreaexitosamente.png)
-*Figura 4: Entrenamiento del modelo*
+Figura 4: Entrenamiento del modelo*
 
 5. **Verificación de los modelos disponibles en FASTAPI**:
 
 ![Modelos](./imagenes/Modelo_disponible_en_API.png)
-*Figura 5: Modelos disponibles
+Figura 5: Modelos disponibles
 
 
 6 **Predicción usando el modelo generado en JupyterLab**:

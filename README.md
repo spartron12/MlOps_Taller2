@@ -147,7 +147,7 @@ CMD ["uv", "run", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "9999"]
 # Imagen base
 docker compose up
 ```
-
+2. **Verificación de los modelos**:
 
 
 

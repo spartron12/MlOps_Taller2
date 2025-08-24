@@ -144,28 +144,78 @@ CMD ["uv", "run", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "9999"]
 ### Entrenamiento de Modelos (Jupyter)
 Para entrenar los modelos, sigue estos pasos:
 
-1. **Clonar el repositorio**:
-   ```bash
-   git clone https://github.com/DAVID316CORDOVA/Taller-1---MLOPS.git
-   cd proyecto-pinguinos
+1. **Activación del entorno de Jupyter**:
+
+
+2. **Ejecución del script de limpieza de datos**:
+   ```python
+  import palmerpenguins as pp
+import pandas as pd
+import joblib
+import numpy as np
+from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+from sklearn.preprocessing import OneHotEncoder
+
+df = pp.load_penguins()
+df.head()
+df[df.isna().any(axis=1)]
+df.dropna(inplace=True)
+categorical_cols = ['sex','island']
+encoder = OneHotEncoder( handle_unknown='ignore')
+x = df.drop(columns=['species'])
+y = df['species']
+x_encoded = encoder.fit_transform(x[categorical_cols])
+X_numeric = x.drop(columns=categorical_cols)
+X_final = np.hstack((X_numeric.values, x_encoded.toarray()))
+
+df_encoded = pd.get_dummies(df, columns=['island','sex'])
+bool_cols = df_encoded.select_dtypes(include='bool').columns
+df_encoded[bool_cols] = df_encoded[bool_cols].astype(int)
+df_encoded.head()
+df_encoded['species'] = df_encoded['species'].apply(lambda x: 
+1 if x == 'Adelie' else 
+2 if x == 'Chinstrap' else 
+3 if x == 'Gentoo' else 
+None)
+df_encoded.to_csv('/bases_modelo/base_penguin.csv', index = False)
+print('Base exportada con éxito')
    ```
 
-2. **Crear entorno virtual y activar**:
-   ```bash
-   python -m venv .venv
-   source .venv/bin/activate  # En Linux/Mac
-   .venv\Scripts\activate     # En Windows
-   ```
+3. **Entrenar modelos**:
+   ```python
+ import pandas as pd
+import joblib
+import numpy as np
+from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression  # Modelo regresión logística.
+from sklearn.neighbors import KNeighborsClassifier  # Modelo KNN.
+from sklearn.tree import DecisionTreeClassifier  # Árbol de decisión.
+from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+from sklearn.preprocessing import OneHotEncoder
 
-3. **Instalar dependencias**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+df = pd.read_csv('/bases_modelo/base_penguin.csv')
+df = pd.DataFrame(df)
+X = df.drop('species', axis=1)
+Y = df['species']
+X_train, X_test, Y_train, Y_test = train_test_split(
+    X, Y, test_size=0.2, random_state=42)
 
-4. **Entrenar modelos**:
-   ```bash
-   python Jupyter/crea_modelos.py
+model = KNeighborsClassifier()
+model.fit(X_train, Y_train)
+y_pred = model.predict(X_test)
+print("Accuracy:", accuracy_score(Y_test, y_pred))
+joblib.dump(model, '/models/KNeighborsClassifier.pkl')
+print('Modelo Exportado Exitosamente')
+
    ```
+4. **Se guardan los modelos dentro del container para que la API los pueda consumir**:
 
 ### Ejecución de la API
 Para ejecutar la API con Docker, sigue estos pasos:
@@ -175,7 +225,7 @@ Para ejecutar la API con Docker, sigue estos pasos:
    docker-compose up --build
    ```
 
-La API estará disponible en http://localhost:8989.
+La API estará disponible en http://localhost:9999/docs.
 
 ---
 

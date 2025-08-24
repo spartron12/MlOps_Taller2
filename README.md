@@ -155,7 +155,7 @@ docker compose up
 *Figura 1: Verificación de los modelos iniciales antes del entrenamiento*
 
 
-2. **Entorno de gestión de datos y entrenamiento de modelos**:
+3. **Entorno de gestión de datos y entrenamiento de modelos**:
 
 
 ![Entorno de Jupyter](./imagenes/JupyterLab.png)
@@ -167,12 +167,12 @@ docker compose up
 ![Limpieza y transformación de datos](./imagenes/LimpiezaPYfuncionando.png)
 *Figura 3: Limpieza y transformación de los datos*
 
-2. **Entrenamiento y almacenamiento del modelo clasificación**:
+4. **Entrenamiento y almacenamiento del modelo clasificación**:
 
 ![Entrenamiento](./imagenes/Modelosecreaexitosamente.png)
 *Figura 4: Entrenamiento del modelo*
 
-2. **Verificación de los modelos disponibles en FASTAPI**:
+5. **Verificación de los modelos disponibles en FASTAPI**:
 
 ![Modelos](./imagenes/Modelo_disponible_en_API.png)
 *Figura 5: Modelos disponibles

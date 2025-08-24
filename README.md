@@ -158,7 +158,7 @@ docker compose up
 2. **Entorno de gestión de datos y entrenamiento de modelos**:
 
 
-![Entorno de Jupyter](./imagenes/JupyterLab.png.png)
+![Entorno de Jupyter](./imagenes/JupyterLab.png)
 *Figura 1: Verificación de del entorno de ju´pyter lab*
 
 

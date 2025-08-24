@@ -25,7 +25,10 @@ proyecto-pinguinos/
 │   ├── pyproject.toml
 │   ├── README.md
 │   └── uv.lock
-```
+── docker-compose.yml
+│  
+── models/
+
 
 ### Descripción de Componentes
 

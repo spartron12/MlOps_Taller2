@@ -142,6 +142,19 @@ CMD ["uv", "run", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "9999"]
 
 ## 4. Ejecución del Proyecto
 
+1. **Levantamiento de la aplicación**:
+```bash
+# Imagen base
+docker compose up
+```
+
+
+
+
+
+
+
+
 ### Entrenamiento de Modelos (Jupyter)
 Para entrenar los modelos, sigue estos pasos:
 

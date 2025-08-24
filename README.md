@@ -155,6 +155,12 @@ docker compose up
 *Figura 1: Verificación de los modelos iniciales antes del entrenamiento*
 
 
+2. **Entorno de gestión de datos y entrenamiento de modelos**:
+
+
+![Entorno de Jupyter](./imagenes/JupyterLab.png.png)
+*Figura 1: Verificación de del entorno de ju´pyter lab*
+
 
 
 ### Entrenamiento de Modelos (Jupyter)
